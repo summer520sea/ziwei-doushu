@@ -74,8 +74,8 @@ function createZiweiMcpServer() {
         '调用本仓库原始 generateChart() 生成完整本命盘。输入公历出生日期、当地钟表时间、性别、经度和 UTC 时区偏移。提供经度时按仓库的真太阳时函数校正，并按晚子时规则确定排盘日期。返回完整 JSON：十二宫、星曜、亮度、四化、大限、命主身主、五行局等。不会保存输入的出生资料。',
       annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
       inputSchema: z.object({
-        birthDate: z.string().regex(/^\\d{4}-\\d{2}-\\d{2}$/).describe('公历出生日期，例如 1995-05-20'),
-        birthTime: z.string().regex(/^\\d{2}:\\d{2}$/).describe('出生地当地钟表时间，例如 17:27'),
+        birthDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).describe('公历出生日期，例如 1995-05-20'),
+        birthTime: z.string().regex(/^\d{2}:\d{2}$/).describe('出生地当地钟表时间，例如 17:27'),
         gender: z.enum(['female', 'male']).describe('性别'),
         longitude: z.number().min(-180).max(180).optional().describe('出生地经度；不提供则不做真太阳时校正'),
         utcOffsetMinutes: z.number().int().min(-720).max(840).default(480).describe('出生地 UTC 固定时区偏移分钟；中国大陆填 480，东经/西经以东为正'),
