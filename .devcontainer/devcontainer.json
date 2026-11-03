@@ -1,0 +1,14 @@
+{
+  "name": "紫微斗数 MCP 云端环境",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-24-bookworm",
+  "forwardPorts": [8787],
+  "portsAttributes": {
+    "8787": {
+      "label": "紫微斗数 MCP",
+      "onAutoForward": "notify",
+      "visibility": "private"
+    }
+  },
+  "postCreateCommand": "npm install && npm run mcp:smoke",
+  "postStartCommand": "bash mcp-server/start.sh"
+}
