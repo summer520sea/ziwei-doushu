@@ -12,8 +12,8 @@
 ## 在 GitHub Codespaces 启动
 
 1. 打开自己的仓库：<https://github.com/summer520sea/ziwei-doushu>
-2. 点击绿色 **Code** → **Codespaces** → **Create codespace on main**。
-3. 首次创建时会自动安装 npm 依赖并运行排盘自检；环境启动后会自动启动 MCP 服务。
+2. 请创建一个新的 Codespace（不要继续使用之前失败的旧实例）：打开 <https://github.com/codespaces/new?repo=summer520sea%2Fziwei-doushu&ref=main>，确认分支为 `main`，然后点击 **Create codespace**。
+3. 首次创建时会自动安装 npm 依赖并运行排盘自检；环境启动后会自动启动 MCP 服务。若旧实例出现 recovery mode，请使用上面的链接从最新 `main` 创建新实例；旧实例使用的是修复前的容器配置。
 4. 在 Codespaces 底部的 **Ports** 面板确认 8787 端口已转发。默认是 Private。
 5. MCP 地址格式为 `https://<你的-codespace-名称>-8787.app.github.dev/mcp`。
 6. 访问令牌可在 Codespaces 终端运行 `cat .mcp-auth-token` 查看。MCP 客户端须使用 HTTP Bearer Token 认证。
