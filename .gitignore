@@ -7,3 +7,6 @@ dist/
 *.tsbuildinfo
 .DS_Store
 node_modules
+.mcp-auth-token
+.mcp-server.pid
+.mcp-server.log
